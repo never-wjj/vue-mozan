@@ -22,10 +22,10 @@
           <p>成功支付：￥158</p>
         </div>
         <span>
-          <router-link :to="$public+'/'">
+          <router-link :to="'/vue-mozan/'">
             <span>继续逛逛</span>
           </router-link>
-          <router-link to="/order">
+          <router-link to="/vue-mozan/order">
             <span>查看订单</span>
           </router-link>
         </span>

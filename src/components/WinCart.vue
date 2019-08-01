@@ -20,10 +20,10 @@
           </ul>
         </div>
         <div>
-          <router-link to="/">
+          <router-link to="/vue-mozan/">
             <span class="win-cart-to">返回</span>
           </router-link>
-          <router-link to="/cart">
+          <router-link to="/vue-mozan/cart">
             <span class="win-bth">去购物车结算</span>
           </router-link>
         </div>

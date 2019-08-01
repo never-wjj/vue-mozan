@@ -117,7 +117,7 @@ export default {
       this.$store.commit("incart", link);
     },
     tocart() {
-      this.$router.push("/wincart");
+      this.$router.push("/vue-mozan/wincart");
     },
     countDown(it) {
       var interval = setInterval(() => {

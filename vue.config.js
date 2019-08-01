@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/mozan/" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "/vue-mozan/" : "/",
   css: {
     loaderOptions: {
       stylus: {

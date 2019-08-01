@@ -16,32 +16,32 @@ Vue.use(VueRouter);
 const routes = [
   {
     component: Home,
-    path: "/"
+    path: Public + "/"
     //子路由下的pash开头不能加斜杠/ 默认开始就是父路由的Pash
   },
   {
     component: WinCart,
-    path: "/wincart"
+    path: Public + "/wincart"
   },
   {
     component: Cart,
-    path: "/cart"
+    path: Public + "/cart"
   },
   {
     component: Dialog,
-    path: "/dialog"
+    path: Public + "/dialog"
   },
   {
     component: Order,
-    path: "/order"
+    path: Public + "/order"
   },
   {
     component: Payment,
-    path: "/payment"
+    path: Public + "/payment"
   },
   {
     component: ShopEnd,
-    path: "/shopend"
+    path: Public + "/shopend"
   }
   // {
   //   component: Pins,

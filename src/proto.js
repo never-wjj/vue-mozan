@@ -1,2 +1,2 @@
-const Public = "/mozan";
+const Public = "/vue-mozan";
 export { Public };

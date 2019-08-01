@@ -150,7 +150,7 @@
             </div>
           </div>
           <div class="order-tijiao-div">
-            <router-link to="payment">
+            <router-link to="/vue-mozan/payment">
               <span class="order-tijiao">提交订单</span>
             </router-link>
           </div>

@@ -49,7 +49,7 @@
             <p>请您在新打开的网上银行页面进行支付</p>
             <p>支付完成前请不要关闭该窗口</p>
             <el-button @click="dialogVisible = false">支付遇到问题</el-button>
-            <router-link to="/shopend">
+            <router-link to="/vue-mozan/shopend">
               <el-button type="primary" @click="dialogVisible = false">已完成支付</el-button>
             </router-link>
           </div>

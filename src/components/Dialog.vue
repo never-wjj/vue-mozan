@@ -19,7 +19,7 @@
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
-        <router-link to="/order">
+        <router-link to="/vue-mozan/order">
           <el-button type="primary" @click="dialogVisible = false">登 录</el-button>
         </router-link>
         <p>
