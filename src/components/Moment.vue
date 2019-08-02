@@ -38,22 +38,22 @@
         <p class="bth-df">
           <span class="moment-bth">款式</span>
           <el-button
-            id="element-bth"
             round
             v-for="kua in kuan"
             :key="kua.id"
             @click="type({id:kua.id})"
+            :class="kua.isActive?'active':''"
           >{{kua.kuanshi}}</el-button>
         </p>
         <div class="bth-df">
           <span class="moment-bth" style="    margin-bottom: 76px">尺码</span>
           <div style="width:280px" class="bth-but">
             <el-button
-              id="element-bot"
               round
               v-for="inf in info"
               :key="inf.id"
               @click="size({id:inf.id})"
+              :class="inf.isActive?'active':''"
             >{{inf.chi}}</el-button>
           </div>
         </div>
@@ -255,15 +255,6 @@ export default {
   color: #fff;
   cursor: pointer;
 }
-#element-bth:active {
-  color: #fed700;
-  border: 1px solid yellow;
-}
-#element-bot.el-button:hover,
-.el-button:focus {
-  background-color: #fed700;
-  border: 1px solid yellow;
-}
 .bth-df .zhong {
   padding: 10px;
   color: #fff;
@@ -274,8 +265,7 @@ export default {
   color: #fff;
   border: 1px solid #fff;
 }
-.moment-right .el-button.is-round.active {
-  color: #fed700;
-  background-color: #fed700;
+.sec-2-inner .moment-right .active {
+  background-color: #fdd900;
 }
 </style>

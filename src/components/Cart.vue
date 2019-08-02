@@ -53,7 +53,7 @@
               <span>{{cart.price}}</span>
               <span>
                 <span class="bth-left" @click="cdcart(cart.id)">+</span>
-                <span style="padding:0 10px">{{cart.num}}</span>
+                <span style="padding:0 10px">{{cart.count}}</span>
                 <span class="bth-right" @click="sdcart(cart.id)">-</span>
               </span>
               <span @click="$store.commit('DelCart')">{{(cart.subtotal*cart.num).toFixed(2)}}</span>

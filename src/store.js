@@ -85,45 +85,55 @@ const store = new Vuex.Store({
     info: [
       {
         id: "12",
-        chi: "XXS"
+        chi: "XXS",
+        isActive: false
       },
       {
         id: "123",
-        chi: "XS"
+        chi: "XS",
+        isActive: false
       },
       {
         id: "124",
-        chi: "S"
+        chi: "S",
+        isActive: false
       },
       {
         id: "125",
-        chi: "M"
+        chi: "M",
+        isActive: false
       },
       {
         id: "126",
-        chi: "L"
+        chi: "L",
+        isActive: false
       },
       {
         id: "127",
-        chi: "XL"
+        chi: "XL",
+        isActive: false
       },
       {
         id: "128",
-        chi: "XXL"
+        chi: "XXL",
+        isActive: false
       }
     ],
     kuan: [
       {
         id: "85",
-        kuanshi: "iphone 5"
+        kuanshi: "iphone 5",
+        isActive: false
       },
       {
         id: "856",
-        kuanshi: "iphone 6"
+        kuanshi: "iphone 6",
+        isActive: false
       },
       {
         id: "855",
-        kuanshi: "iphone 6+"
+        kuanshi: "iphone 6+",
+        isActive: false
       }
     ]
   },
@@ -138,18 +148,29 @@ const store = new Vuex.Store({
     },
     intype(state, payload) {
       state.typeTo = state.kuan.find(item => item.id === payload.id).kuanshi;
-      // console.log(state.kuan.find(item => item.id === payload.id).kuanshi);
+      if (state.kuan.find(item => item.isActive === true)) {
+        state.kuan.find(item => item.isActive === true).isActive = false;
+      }
+      state.kuan.find(
+        item => item.id === payload.id
+      ).isActive = !state.kuan.find(item => item.id === payload.id).isActive;
     },
+
     insize(state, payload) {
       state.sizeTo = state.info.find(item => item.id === payload.id).chi;
-      // console.log(state.info.find(item => item.id === payload.id).chi);
+      if (state.info.find(item => item.isActive === true)) {
+        state.info.find(item => item.isActive === true).isActive = false;
+      }
+      state.info.find(
+        item => item.id === payload.id
+      ).isActive = !state.info.find(item => item.id === payload.id).isActive;
     },
     incdCart(state, id) {
-      state.carts.find(item => item.id === id).num++;
+      state.carts.find(item => item.id === id).count++;
     },
     insdcart(state, id) {
-      if (state.carts.find(item => item.id === id).num > 1) {
-        state.carts.find(item => item.id === id).num--;
+      if (state.carts.find(item => item.id === id).count > 1) {
+        state.carts.find(item => item.id === id).count--;
       }
     },
     delChecked(state) {
@@ -199,6 +220,7 @@ const store = new Vuex.Store({
             kuan: item.kuan,
             chicun: item.chicun,
             num: item.num,
+            count: item.count,
             subtotal: item.subtotal,
             checked: false,
             tooltip: item.tooltip
@@ -230,9 +252,10 @@ const store = new Vuex.Store({
         .reduce((res, item) => res + item.count, 0);
     },
     total(state) {
+      console.log(state.carts.filter(item => item.checked));
       return state.carts
         .filter(item => item.checked)
-        .reduce((res, item) => res + item.count * item.price, 0);
+        .reduce((res, item) => (res = res + item.count * item.price), 0);
     },
     checkedall(state) {
       if (!state.carts.find(item => item.checked === false)) {
