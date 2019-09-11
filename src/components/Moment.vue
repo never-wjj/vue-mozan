@@ -26,7 +26,7 @@
           <span style="float:right">
             <span class="yellow">注：</span>
             商品将于
-            <span class="yellow">2019/08/10</span> 统一发货
+            <span class="yellow">2019/10/01</span> 统一发货
           </span>
         </p>
       </div>
@@ -82,7 +82,7 @@ export default {
   data() {
     return {
       countDownList: "00天00时00分00秒",
-      actEndTime: "2019-08-10 18:50:00"
+      actEndTime: "2019-10-01 06:00:00"
     };
   },
   computed: {
